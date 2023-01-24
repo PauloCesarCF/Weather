@@ -6,23 +6,6 @@ form.addEventListener('submit', e => {
     e.preventDefault()
 })
 
-const showImageBackground = async () => {
-    const body = document.querySelector('body');
-
-    const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-    const getNumberRandom = randomNumber(numbers)
-
-    const getImage = await fetch(`https://api.unsplash.com/search/photos?client_id=vxJ9jiqcDmrTxrGN_tQX5jWqLiN2_5S7Or73VjnMtJM&query=${city.value}`)
-    const ImageJson = await getImage.json()
-    const image = ImageJson.results[getNumberRandom].urls.full
-
-    body.style.backgroundImage = `url(${image})`
-    body.style.backgroundPosition = 'center center'
-    body.style.backgroundSize = 'cover'
-
-}
-
 const ShowTemp = (temp) => {
 
     const responseAPI = {
@@ -51,12 +34,7 @@ const ShowTemp = (temp) => {
 const renderTemp = temp => {
     const section = document.querySelector('section')
 
-    if (temp.cod === '400' | temp.cod === '404') {
-        section.innerHTML = `<p>Não foi possível encontrar a cidade citada`
-        return
-    }
-    section.innerHTML = ShowTemp(temp)
-    showImageBackground()
+    section.innerHTML = temp.cod === '400' | temp.cod === '404' ? `<p>Não foi possível encontrar a cidade citada</p>` : ShowTemp(temp)
 };
 
 const getResponseAPI = async () => {
