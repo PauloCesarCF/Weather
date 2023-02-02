@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+  color: #eeeeee;
 }
 
 body {
@@ -10,9 +11,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #0F172C;
 }
 body main {
-  background-color: blue;
+  background-color: #8546ef;
 }
 
 main {
@@ -25,6 +27,7 @@ main {
 }
 main .title {
   margin-bottom: 10px;
+  font-size: 25px;
 }
 main form {
   display: flex;
@@ -35,6 +38,19 @@ main section {
 
 form input {
   padding: 5px;
+  border-radius: 15px;
+  border: 1px solid white;
+  margin-right: 3px;
+  color: #0F172C;
+  box-shadow: 0 5px 15px;
+}
+form input:focus {
+  box-shadow: 0 5px 15px;
+  outline: 0;
+}
+form button {
+  display: flex;
+  justify-content: center;
 }
 form button img {
   width: 23px;
@@ -47,6 +63,12 @@ form button img:hover {
   background-color: white;
   width: 100%;
   height: 1px;
+  margin-top: 15px;
+  display: none;
+}
+
+.line-show {
+  display: block;
 }
 
 .containerLoader {
@@ -107,10 +129,10 @@ div {
 }
 div img {
   width: 23px;
+  border-radius: 15px;
 }
 
 section p {
-  margin-top: 7px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -118,6 +140,10 @@ section p {
 }
 section p img {
   width: 40px;
+}
+
+section .erro {
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

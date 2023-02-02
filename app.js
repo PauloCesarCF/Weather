@@ -7,6 +7,7 @@ form.addEventListener('submit', e => {
 })
 
 const ShowTemp = (temp) => {
+    document.querySelector('.line').classList.add('line-show')
 
     const responseAPI = {
         tempNow: temp.weather,
@@ -23,18 +24,17 @@ const ShowTemp = (temp) => {
     return (`
         <div>
             <img src='imgs/localitaion.svg' />
-            <p>${responseAPI.name} ${responseAPI.temp_now}°C</p>
+            <p>${responseAPI.name} </p>
         </div>
+        <p>${responseAPI.temp_now}°C</p>
         <p>${responseAPI.description} <img src=https://openweathermap.org/img/wn/${responseAPI.icon}.png /></p>
-        <p>Maxima: ${responseAPI.temp_max}°C</p>
-        <p>Minima: ${responseAPI.temp_min}°C</p>
     `)
 }
 
 const renderTemp = temp => {
     const section = document.querySelector('section')
 
-    section.innerHTML = temp.cod === '400' | temp.cod === '404' ? `<p>Não foi possível encontrar a cidade citada</p>` : ShowTemp(temp)
+    section.innerHTML = temp.cod === '400' | temp.cod === '404' ? `<p class="erro">Não foi possível encontrar a cidade citada</p>` : ShowTemp(temp)
 };
 
 const getResponseAPI = async () => {

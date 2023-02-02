@@ -1,7 +1,13 @@
+$azulEscuro: #0F172C;
+$roxo: #8546ef;
+$poucoRosa: #fec7d7;
+$branco: #eeeeee;
+
 *{
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif
+  font-family: Arial, Helvetica, sans-serif;
+  color: $branco
 }
 
 body{
@@ -10,9 +16,10 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: $azulEscuro;
 
   main{
-    background-color: blue;
+    background-color: $roxo;
   }
 }
 
@@ -26,6 +33,7 @@ main{
 
   .title{
     margin-bottom: 10px;
+    font-size: 25px
   }
 
   form{
@@ -40,10 +48,23 @@ main{
 form{
 
   input{
-    padding: 5px
+    padding: 5px;
+    border-radius: 15px;
+    border: 1px solid white;
+    margin-right: 3px;
+    color: $azulEscuro;
+    box-shadow: 0 5px 15px;
+  }
+
+  input:focus{
+    box-shadow: 0 5px 15px;
+    outline: 0;
   }
 
   button{
+    display: flex;
+    justify-content: center;
+
     img{
       width: 23px;
 
@@ -58,6 +79,12 @@ form{
   background-color: white;
   width: 100%;
   height: 1px;
+  margin-top: 15px;
+  display: none
+}
+
+.line-show{
+  display: block
 }
 
 .containerLoader{
@@ -121,11 +148,11 @@ div{
   align-items: center;
   img{
     width: 23px;
+    border-radius: 15px
   }
 }
 
 section p{
-  margin-top: 7px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -134,4 +161,8 @@ section p{
   img{
     width: 40px;
   }
+}
+
+section .erro{
+  margin-top: 10px
 }
